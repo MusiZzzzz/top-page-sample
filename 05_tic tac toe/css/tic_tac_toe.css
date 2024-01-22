@@ -21,6 +21,8 @@ body {
         sans-serif;
     background-image: url(../img/background.jpg);
     background-size: cover;
+    overflow: hidden;
+
 }
 
 p {
@@ -69,12 +71,43 @@ header {
     display: none;
 }
 
+.level-container {
+    margin: 0px 100px 20px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.level-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.level {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 24px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.level-non-selected {
+    color: whitesmoke;
+    background: rgb(116, 124, 169);
+    border: solid 2px #333;
+}
+
+.level-selected {
+    color: whitesmoke;
+    background: #502a0d;
+    border: solid 2px #333;
+}
+
 .js-pen-checked::before {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 145px;
+    height: 100%;
     content: "";
     background-image: url(../img/penguins.jpg);
     background-size: cover;
@@ -89,7 +122,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 145px;
+    height: 100%;
     content: "";
     background-image: url(../img/whitebear.jpg);
     background-size: cover;
@@ -112,23 +145,23 @@ header {
     display: flex;
     flex-wrap: wrap;
     margin: auto auto;
-    width: 450px;
+    width: 300px;
 }
 
 .squares-box {
-    width: 450px;
-    height: 450px;
+    width: 300px;
+    height: 300px;
     display: flex;
     flex-wrap: wrap;
-    border: solid 2px #333;
+    border: solid 3px #333;
 }
 
 .square {
     position: relative;
-    width: calc(446px / 3);
-    height: calc(446px / 3);
-    border: solid 2px #000000;
-    background-color: rgba(3, 7, 8, 0.3);
+    width: 98px;
+    height: 98px;
+    border: solid 3px #000000;
+    background-color: rgba(3, 8, 7, 0.3);
 }
 
 .js-pen_highLight {
@@ -165,6 +198,7 @@ header {
 }
 
 footer>p {
+    position: absolute;
     bottom: 5px;
     width: 100%;
     margin: 0px;
@@ -183,8 +217,9 @@ footer>p {
     }
 
     .wrapper {
-        margin-bottom: 23px;
+        padding-bottom: 23px;
     }
+
 
     .btn-container {
         padding-top: 2px;
@@ -198,22 +233,24 @@ footer>p {
         font-size: 20px;
     }
 
-    .squares-container {
-        width: 90%;
+    /* .squares-container {
+        width:90%;
     }
 
     .squares-box {
-        width: 100%;
+        width: 100%; 
     }
 
     .square {
-        width: 33.33%;
-        height: auto;
+        width: 33.33%; 
+        height: auto; 
     }
 
     .image img {
         width: 33.33%;
         height: auto;
         object-fit: cover;
-    }
+    } */
+
+
 }

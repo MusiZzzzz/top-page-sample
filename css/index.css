@@ -8,43 +8,54 @@ html {
 
 /* 「*」はユニバーサルセレクタ（すべての要素を対象にするセレクタ）でbox-sizing: border-box;を指定 */
 /* この指定（してい）はborderとpaddingをボックスサイズ（widthとheight）の中に含めて算出するので、スタイリングがしやすい*/
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-body{
+body {
     line-height: 1.5;
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/line-height */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/line-height */
     color: rgb(73, 72, 72);
-    font-size: 1.6rem; /* 16px */
+    font-size: 1.6rem;
+    /* 16px */
     font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
     text-align: center;
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/text-align */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/text-align */
     /* 背景（はいけい）をうすくしたいとき */
     /* background-color:rgba(255, 255, 255, 0.6); */
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/background-color */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/background-color */
 
     /* background-blend-mode: soft-light; */
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/background-blend-mode */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/background-blend-mode */
 
     background-image: url(../img/topimg2.JPG);
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/background-image */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/background-image */
     background-size: cover;
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/background-size */
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/background */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/background-size */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/background */
     overflow: hidden;
 }
 
-header, footer, h1, h2, h3, p, div, .container01, .filler01 {
+header,
+footer,
+h1,
+h2,
+h3,
+p,
+div,
+.container01,
+.filler01 {
     margin: 0.2em 0em 0em 0em;
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/margin */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/margin */
     padding: 0.1em;
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/padding */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/padding */
 }
 
 /*****************************/
@@ -56,7 +67,7 @@ h1 {
     background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
 }
 
-h2{
+h2 {
     padding-left: 0.5em;
     border-left: solid 0.5em darkgray;
     text-align: left;
@@ -66,14 +77,19 @@ h2{
 /* ページ                    */
 /*****************************/
 .wrapper {
-    position: relative;/*相対位置*/
-    max-width: 100vw;  /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-width:100vwに*/
-    min-height: 100vh; /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-height:100vhに*/
+    position: relative;
+    /*相対位置*/
+    max-width: 100vw;
+    /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-width:100vwに*/
+    min-height: 100vh;
+    /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-height:100vhに*/
     margin: 0;
     padding: 0;
-    padding-bottom: 23px;/*footer+paddingの高さ*/
+    padding-bottom: 23px;
+    /*footer+paddingの高さ*/
     text-align: center;
 }
+
 /*****************************/
 /* セクション(section)        */
 /*****************************/
@@ -83,12 +99,13 @@ h2{
     padding-left: 0.5em;
     width: 80%;
     border-radius: 0.5em 1.5em;
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/border-radius */
-    background-color:rgba(245, 245, 245, 0.6);
-    box-shadow:0 0 0.5em rgb(73, 72, 72);
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/box-shadow */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/border-radius */
+    background-color: rgba(245, 245, 245, 0.6);
+    box-shadow: 0 0 0.5em rgb(73, 72, 72);
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/box-shadow */
 }
-main > p {
+
+main>p {
     font: 1.2em bold;
 }
 
@@ -99,11 +116,11 @@ a {
     color: black;
     font-weight: 900;
     text-decoration: none;
-        /* https://developer.mozilla.org/ja/docs/Web/CSS/text-decoration */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/text-decoration */
 }
 
 /* mouseoverでグレースケール */
-a:hover{
+a:hover {
     opacity: 0.5;
     filter: grayscale(100%);
 }
@@ -111,17 +128,20 @@ a:hover{
 /*****************************/
 /* container  item           */
 /*****************************/
-.container01-01 , .container01-02, .container01-03 , .container01-04 {
+.container01-01,
+.container01-02,
+.container01-03,
+.container01-04 {
     display: flex;
-        /*https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout*/
-    flex-wrap:wrap;
-        /*https://developer.mozilla.org/ja/docs/Web/CSS/flex-wrap*/
+    /*https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Flexible_Box_Layout*/
+    flex-wrap: wrap;
+    /*https://developer.mozilla.org/ja/docs/Web/CSS/flex-wrap*/
     justify-content: space-evenly;
-        /*https://developer.mozilla.org/ja/docs/Web/CSS/justify-content*/
+    /*https://developer.mozilla.org/ja/docs/Web/CSS/justify-content*/
     font-size: 0.7em;
 }
 
-.item01{
+.item01 {
     position: relative;
     width: 6em;
     height: 9em;
@@ -130,7 +150,7 @@ a:hover{
     overflow: hidden;
 }
 
-.item02{
+.item02 {
     position: relative;
     width: 6em;
     height: 12em;
@@ -139,12 +159,13 @@ a:hover{
     overflow: hidden;
 }
 
-.item01 img, .item02 img{
+.item01 img,
+.item02 img {
     width: 6em;
     height: auto;
 }
 
-.item01 .img_omikuji2{
+.item01 .img_omikuji2 {
     width: auto;
     height: 6em;
     overflow: hidden;
@@ -153,9 +174,11 @@ a:hover{
 /*****************************/
 /* フッター                   */
 /*****************************/
-footer> p {
-    position: absolute;/*←絶対位置*/
-    bottom: 5px; /*下に固定*/
+footer>p {
+    position: absolute;
+    /*←絶対位置*/
+    bottom: 5px;
+    /*下に固定*/
     width: 100%;
     margin: 0px;
     padding: 1px;
@@ -164,13 +187,14 @@ footer> p {
     text-align: center;
     background: rgba(1, 24, 31, 0.7);
 }
+
 /*******************************************************/
 /* レスポンシブ対応　メディアクエリを使ってCSSを切り替える */
 /* https://www.design-memo.com/coding/css-media-queries */
 /* mobileのときのスタイル */
 /*******************************************************/
 @media screen and (max-width: 480px) {
-    body{
+    body {
         background-size: auto 812px;
     }
 }

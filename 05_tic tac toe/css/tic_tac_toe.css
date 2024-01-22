@@ -176,12 +176,12 @@ footer>p {
 }
 
 @media screen and (max-width: 480px) {
-    
-    body{
-        background-position:center;
+
+    body {
+        background-position: center;
         background-size: auto 100%;
-        }
-    
+    }
+
     .wrapper {
         margin-bottom: 23px;
     }
@@ -197,17 +197,18 @@ footer>p {
     #msgtext {
         font-size: 20px;
     }
+
     .squares-container {
-        width:90%;
+        width: 90%;
     }
 
     .squares-box {
-        width: 100%; 
+        width: 100%;
     }
 
     .square {
-        width: 33.33%; 
-        height: auto; 
+        width: 33.33%;
+        height: auto;
     }
 
     .image img {

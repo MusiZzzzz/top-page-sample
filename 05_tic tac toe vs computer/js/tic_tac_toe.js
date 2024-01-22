@@ -57,40 +57,40 @@ function LevelSetting(index) {
     level_3.classList.remove("level-selected");
     level_3.classList.remove("level-non-selected");
 
-if (sessionStorage.getItem("tic_tac_toe_access")) {
-    switch (index) {
-        case 0:
-            sessionStorage.setItem("tic_tac_toe_access", "1");
-            level_1.classList.add("level-selected");
-            level_2.classList.add("level-non-selected");
-            level_3.classList.add("level-non-selected");
-            break;
+    if (sessionStorage.getItem("tic_tac_toe_access")) {
+        switch (index) {
+            case 0:
+                sessionStorage.setItem("tic_tac_toe_access", "1");
+                level_1.classList.add("level-selected");
+                level_2.classList.add("level-non-selected");
+                level_3.classList.add("level-non-selected");
+                break;
 
-        case 1:
-            sessionStorage.setItem("tic_tac_toe_access", "2");
-            level_1.classList.add("level-non-selected");
-            level_2.classList.add("level-selected");
-            level_3.classList.add("level-non-selected");
-            break;
+            case 1:
+                sessionStorage.setItem("tic_tac_toe_access", "2");
+                level_1.classList.add("level-non-selected");
+                level_2.classList.add("level-selected");
+                level_3.classList.add("level-non-selected");
+                break;
 
-        case 2:
-            sessionStorage.setItem("tic_tac_toe_access", "3");
-            level_1.classList.add("level-non-selected");
-            level_2.classList.add("level-non-selected");
-            level_3.classList.add("level-selected");
-            break;
+            case 2:
+                sessionStorage.setItem("tic_tac_toe_access", "3");
+                level_1.classList.add("level-non-selected");
+                level_2.classList.add("level-non-selected");
+                level_3.classList.add("level-selected");
+                break;
 
-        default:
-            level_1.classList.add("level-selected");
-            level_2.classList.add("level-non-selected");
-            level_3.classList.add("level-non-selected");
-            break;
-    }
-} else {
-    sessionStorage.setItem("tic_tac_toe_access", "1");
-    level_1.classList.add("level-selected");
-    level_2.classList.add("level-non-selected");
-    level_3.classList.add("level-non-selected");
+            default:
+                level_1.classList.add("level-selected");
+                level_2.classList.add("level-non-selected");
+                level_3.classList.add("level-non-selected");
+                break;
+        }
+    } else {
+        sessionStorage.setItem("tic_tac_toe_access", "1");
+        level_1.classList.add("level-selected");
+        level_2.classList.add("level-non-selected");
+        level_3.classList.add("level-non-selected");
     }
 }
 
@@ -131,7 +131,7 @@ window.addEventListener("DOMContentLoaded",
 
 squaresArray.forEach(function (square) {
     square.addEventListener("click", () => {
-        if(counter === 9){
+        if (counter === 9) {
             let levelBox = document.getElementById("levelBox");
             levelBox.classList.add("js-unclickable");
         }
@@ -325,39 +325,39 @@ function bear_turn() {
     let gameOverflag = "0";
 
     while (bearTurnEnd === "0") {
-        if(level === "1"|| level === "2" || level === "3"){
-        bearTurnEnd = isReach("bear");
-        if (bearTurnEnd === "1") {
-            gameOverflag = "1";
-            break;
+        if (level === "1" || level === "2" || level === "3") {
+            bearTurnEnd = isReach("bear");
+            if (bearTurnEnd === "1") {
+                gameOverflag = "1";
+                break;
+            }
         }
-    }
 
-        if(level === "2" || level === "3"){
-        bearTurnEnd = isReach("penguins");
-        if (bearTurnEnd === "1") {
-            break;
+        if (level === "2" || level === "3") {
+            bearTurnEnd = isReach("penguins");
+            if (bearTurnEnd === "1") {
+                break;
+            }
         }
-    }
 
-        if(level === "2" || level === "3"){
-            if(b_2.classList.contains("js-clickable")){
+        if (level === "2" || level === "3") {
+            if (b_2.classList.contains("js-clickable")) {
                 gameOverflag = isSelect(b_2);
                 bearTurnEnd = "1";
                 break;
             }
         }
 
-        if(level === "3"){
-        for (let square of lineRandom) {
-            if (square.classList.contains("js-clickable")) {
-                gameOverflag = isSelect(square);
-                bearTurnEnd = "1";
-                break;
+        if (level === "3") {
+            for (let square of lineRandom) {
+                if (square.classList.contains("js-clickable")) {
+                    gameOverflag = isSelect(square);
+                    bearTurnEnd = "1";
+                    break;
+                }
             }
+            if (bearTurnEnd === "1") break;
         }
-        if (bearTurnEnd === "1") break;
-    }
 
         const bearSquare = squaresArray.filter(function (square) {
             return square.classList.contains("js-clickable");

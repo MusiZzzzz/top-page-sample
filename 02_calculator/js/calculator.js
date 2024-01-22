@@ -1,7 +1,7 @@
 "use strict";
 
-  //***********************************//
- //    ページ上の要素(Element)を参照    //    
+//***********************************//
+//    ページ上の要素(Element)を参照    //    
 //***********************************//
 
 const elementSelect = document.getElementById("calcType");
@@ -14,13 +14,13 @@ const elementbtnEqual = document.getElementById("btnEqual")
 //         イベントを登録           //
 //********************************//
 
-elementSelect.addEventListener("change",E);
-elementNum1.addEventListener("change",E);
-elementNum2.addEventListener("change",E);
+elementSelect.addEventListener("change", E);
+elementNum1.addEventListener("change", E);
+elementNum2.addEventListener("change", E);
 
-elementbtnEqual.addEventListener("click",update);
+elementbtnEqual.addEventListener("click", update);
 
-function update(){
+function update() {
 
     const result = calculate(
         Number(elementNum1.value),
@@ -31,10 +31,10 @@ function update(){
     elementResult.innerHTML = result;
 }
 
-function calculate(num1,num2,calcType){
+function calculate(num1, num2, calcType) {
     let result;
     //計算の種類
-    switch(calcType){
+    switch (calcType) {
         case "type-add":
             result = num1 + num2;
             break;
@@ -51,6 +51,6 @@ function calculate(num1,num2,calcType){
     return result;
 }
 
-function E(){
+function E() {
     elementResult.innerHTML = "";
 }

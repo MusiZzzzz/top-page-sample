@@ -24,44 +24,44 @@ const bingosound = new Audio("sound/stop2.mp3");
 // Startボタンクリック
 ////////////////////////
 start.addEventListener("click",
-  function() {
+  function () {
     // ボタンをタイマー"動作中"状態とする
     setButtonStateRunning();
     startTime = Date.now();
     countUp();
     startsound.currentTime = 0;
     startsound.play();
-  },false
+  }, false
 );
 
 ////////////////////////
 // Stopボタンクリック
 ////////////////////////
 stop.addEventListener("click",
-  function() {
+  function () {
     // タイマーを"停止中"状態とする
     setButtonStatestopped();
     clearTimeout(timeoutid); //setTimeout()でセットしたタイマーを解除する際に使用
     stopTime = Date.now() - startTime;
     stopsound.currentTime = 0;
     soundcontrol();
-      ///test用
-       /// if (stopTime >1000) 
-     if (stopTime >= 10000 && stopTime <= 10999)  {
+    ///test用
+    /// if (stopTime >1000) 
+    if (stopTime >= 10000 && stopTime <= 10999) {
       document.body.style.backgroundImage = "url('img/fireworks.gif')";
       document.body.style.backgroundColor = "transparent";
       bingosound.play();
-    }else{
+    } else {
       stopsound.play();
     }
-  },false
+  }, false
 );
 
 ////////////////////////
 // Resetボタンクリック
 ////////////////////////
 reset.addEventListener("click",
-  function() {
+  function () {
     // ボタンを"初期"状態とする
     setButtonStateInitial()
     timer.textContent = "00:00.000";
@@ -86,7 +86,7 @@ function countUp() {
   timeoutid = setTimeout(() => {
     //再帰呼び出し
     countUp();
-  
+
   }, 10);
 }
 
@@ -120,11 +120,12 @@ function setButtonStatestopped() {
   reset.classList.remove("js-inactive"); // 活性
   start.classList.add("js-unclickable");
   stop.classList.add("js-unclickable");
-  reset.classList.remove("js-unclickable");}
+  reset.classList.remove("js-unclickable");
+}
 
 
 
-function soundcontrol(){
+function soundcontrol() {
   startsound.pause();
   stopsound.pause();
   resetsound.pause();

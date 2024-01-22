@@ -232,7 +232,7 @@ function saveBtn() {
 // 保存機能 end
 
 //削除機能 start
-function delBtn(){
+function delBtn() {
   const chkbox1 = document.getElementsByName("chkbox1");
   const table1 = document.getElementById("table1");
   w_cnt = selectCheckbox("del");
@@ -298,19 +298,19 @@ function del_row() {
 //trashで削除機能 end
 
 // すべて削除機能　start
-function allClearBtn(){
-          //localStorageの削除指令を使用する
-          localStorage.clear();
-          viewStorage();
-          let w_msg = `LocalStorageのデータを<span class="custom-text-color-key">すべて</span>削除しました。`;
-          Swal.fire({
-            title: "Memo app",
-            html: w_msg,
-            type: "success",
-            background: "linear-gradient(#99f, #f99)",
-            allowOutsideClick: false,
-          });
-          questionsound("success");
+function allClearBtn() {
+  //localStorageの削除指令を使用する
+  localStorage.clear();
+  viewStorage();
+  let w_msg = `LocalStorageのデータを<span class="custom-text-color-key">すべて</span>削除しました。`;
+  Swal.fire({
+    title: "Memo app",
+    html: w_msg,
+    type: "success",
+    background: "linear-gradient(#99f, #f99)",
+    allowOutsideClick: false,
+  });
+  questionsound("success");
 }
 // すべて削除機能　end
 
@@ -376,4 +376,4 @@ function viewStorage() {
   $("#table1").trigger("update");
 }
 
-  //jqueryを使用して、数字を小から大まで並べる end
+//jqueryを使用して、数字を小から大まで並べる end

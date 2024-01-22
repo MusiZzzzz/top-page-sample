@@ -26,15 +26,15 @@ const elementCancel = document.getElementById("cancel");
 // イベントを登録
 // 【Ｂ】自分で考える
 for (let i = 0; i <= 9; i++) {
-  document.querySelector(`#num${i}`).addEventListener("click", function() {
+  document.querySelector(`#num${i}`).addEventListener("click", function () {
     edit(i);
   });
 }
-const operators = ["+","-","*","/"];
-const elements = [elementAdd,elementSub,elementMult,elementDiv];
+const operators = ["+", "-", "*", "/"];
+const elements = [elementAdd, elementSub, elementMult, elementDiv];
 
-for(let n = 0; n< operators.length;n++){
-  elements[n].addEventListener("click",function(){
+for (let n = 0; n < operators.length; n++) {
+  elements[n].addEventListener("click", function () {
     update(operators[n]);
   });
 }
@@ -42,7 +42,7 @@ for(let n = 0; n< operators.length;n++){
 elementEqual.addEventListener("click", dspResult);
 elementCancel.addEventListener("click", clear);
 
-document.body.addEventListener("keydown", function(event) {
+document.body.addEventListener("keydown", function (event) {
   const key = event.key;
 
   if (key >= "0" && key <= "9") {
@@ -52,44 +52,44 @@ document.body.addEventListener("keydown", function(event) {
 });
 
 
-document.body.addEventListener("keydown",suadd);
-function suadd(event){
-  if(event.key === "+"){
+document.body.addEventListener("keydown", suadd);
+function suadd(event) {
+  if (event.key === "+") {
     elementAdd.click();
   }
 }
 
-document.body.addEventListener("keydown",susub);
-function susub(event){
-  if(event.key === "-"){
+document.body.addEventListener("keydown", susub);
+function susub(event) {
+  if (event.key === "-") {
     elementSub.click();
   }
 }
 
-document.body.addEventListener("keydown",sumult);
-function sumult(event){
-  if(event.key === "*"){
+document.body.addEventListener("keydown", sumult);
+function sumult(event) {
+  if (event.key === "*") {
     elementMult.click();
   }
 }
 
-document.body.addEventListener("keydown",sudiv);
-function sudiv(event){
-  if(event.key === "/"){
+document.body.addEventListener("keydown", sudiv);
+function sudiv(event) {
+  if (event.key === "/") {
     elementDiv.click();
   }
 }
 
-document.body.addEventListener("keydown",suequal);
-function suequal(event){
-  if(event.key === "Enter"){
+document.body.addEventListener("keydown", suequal);
+function suequal(event) {
+  if (event.key === "Enter") {
     elementEqual.click();
   }
 }
 
-document.body.addEventListener("keydown",suecancel);
-function suecancel(event){
-  if(event.key === "c"){
+document.body.addEventListener("keydown", suecancel);
+function suecancel(event) {
+  if (event.key === "c") {
     elementCancel.click();
   }
 }
@@ -99,8 +99,8 @@ function suecancel(event){
 function edit(wkInput) {
   // １つ前の入力が数値
   if (wkBefore === "0") {
-      elementResult.innerHTML = Number(elementResult.innerHTML + wkInput); //入力値の結合（ゼロサプレスして結合）
-  } 
+    elementResult.innerHTML = Number(elementResult.innerHTML + wkInput); //入力値の結合（ゼロサプレスして結合）
+  }
   // １つ前の入力が、演算子
   else {
     elementResult.innerHTML = wkInput;
@@ -115,7 +115,7 @@ function update(calcType) {
   if (wkBefore === "0") {
     elementcalcLog.innerHTML = elementcalcLog.innerHTML + Number(elementResult.innerHTML) + calcType; //計算ログ
     calculator();
-  } 
+  }
   // １つ前の入力が演算子（演算子 入力しなおし）
   else {
     // 初回入力
@@ -125,11 +125,11 @@ function update(calcType) {
     else {
       // 演算子 入力しなおし
       let wkLogLastWord = elementcalcLog.innerHTML.slice(-1); //ログ最後の１文字
-      if (["+","-","*","/"].includes(wkLogLastWord)) {
+      if (["+", "-", "*", "/"].includes(wkLogLastWord)) {
         elementcalcLog.innerHTML = elementcalcLog.innerHTML.slice(0, -1) + calcType; //計算ログ　末尾1文字（前回の演算子）を削除
       }
       // イコールの後の演算子
-      else{
+      else {
         elementcalcLog.innerHTML = elementcalcLog.innerHTML + calcType; //計算ログ
       }
     }
@@ -142,15 +142,15 @@ function update(calcType) {
 // 【Ｄ】自分で考える
 function dspResult() {
   if (wkFirst === "0" && wkBefore === "0") {
-      elementcalcLog.innerHTML = elementcalcLog.innerHTML + Number(elementResult.innerHTML);
-      calculator();
-      wkCalc = "=";
-      wkBefore = "1";
+    elementcalcLog.innerHTML = elementcalcLog.innerHTML + Number(elementResult.innerHTML);
+    calculator();
+    wkCalc = "=";
+    wkBefore = "1";
   }
 }
 /** 計算結果をクリアします。(clear Result) */
 // 【Ｅ】自分で考える
-function clear(){
+function clear() {
   elementResult.innerHTML = "0";
   elementcalcLog.innerHTML = "";
   wkFirst = "1";
@@ -162,7 +162,7 @@ function clear(){
 // 計算
 // 【Ｆ】自分で考える
 function calculator() {
-  switch(wkCalc){
+  switch (wkCalc) {
     case "+":
       wkTotal = Number(wkTotal) + Number(elementResult.innerHTML);
       break;
@@ -171,7 +171,7 @@ function calculator() {
       break;
     case "*":
       wkTotal = Number(wkTotal) * Number(elementResult.innerHTML);
-      break;      
+      break;
     case "/":
       wkTotal = Number(wkTotal) / Number(elementResult.innerHTML);
       break;

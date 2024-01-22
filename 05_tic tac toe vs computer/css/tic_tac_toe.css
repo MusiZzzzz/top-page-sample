@@ -164,13 +164,116 @@ header {
     background-color: rgba(3, 8, 7, 0.3);
 }
 
-.js-pen_highLight {
+/* .js-pen_highLight {
     border: solid 2px red;
 }
 
 .js-bear_highLight {
     border: solid 2px blue;
+} */
+
+.js-pen_highLight,
+.js-bear_highLight {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
 }
+
+.js-pen_highLight::after {
+    content: "";
+    height: 100%;
+    width: 30px;
+    position: absolute;
+    top: -180px;
+    left: 0;
+    background-color: rgba(255, 255, 255);
+    opacity: 0;
+    transform: rotate(45deg);
+    animation: reflection1 2.5s ease-in-out infinite;
+}
+
+@keyframes reflection1 {
+    0% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+
+    20% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0.5;
+    }
+
+    30% {
+        transform: scale(4) rotate(45deg);
+        opacity: 1;
+    }
+
+    40% {
+        transform: scale(50) rotate(45deg);
+        opacity: 0;
+        background-color: rgba(255, 255, 255);
+    }
+    65% {
+        transform: scale(50) rotate(45deg);
+        opacity: 1;
+        background-color: rgba(245, 209, 8, 0.65); 
+    }
+
+    99% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+        background-color: rgba(246, 243, 227, 0.1); 
+    }
+}
+
+.js-bear_highLight::after {
+    content: "";
+    height: 100%;
+    width: 30px;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    background-color: white;
+    opacity: 0;
+    transform: rotate(45deg);
+    animation: reflection1 2.5s ease-in-out infinite;
+}
+
+@keyframes reflection2 {
+    0% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+
+    20% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0.5;
+    }
+
+    30% {
+        transform: scale(4) rotate(45deg);
+        opacity: 1;
+    }
+
+    40% {
+        transform: scale(50) rotate(45deg);
+        opacity: 0;
+        background-color: rgba(255, 255, 255);
+    }
+    65% {
+        transform: scale(50) rotate(45deg);
+        opacity: 1;
+        background-color: rgba(245, 209, 8, 0.65); 
+    }
+
+    99% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+        background-color: rgba(246, 243, 227, 0.1); 
+    }
+}
+
+
 
 .btn {
     margin-top: 8px;

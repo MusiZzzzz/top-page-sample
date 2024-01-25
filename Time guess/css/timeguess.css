@@ -21,7 +21,7 @@ body {
   background-blend-mode: soft-light;
   /* background-image: url(../img/backimg.JPG); */
   background-size: cover;
-  overflow: hidden;
+  /* overflow: hidden; */ 
 }
 
 @media screen and (max-width:1080px) {
@@ -57,7 +57,7 @@ table,
   /*相対位置*/
   max-width: 100vw;
   /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-width:100vwに*/
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /*すべての要素をbox-sizing:border-boxとしているので全て含めてmin-height:100vhに*/
   margin: 0;
   padding: 0;
@@ -153,13 +153,52 @@ i {
   pointer-events: none;
 }
 
+
+.score-container{
+  margin: 5px 100px 5px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+table{
+  table-layout: fixed;
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+  opacity: 0.9;
+  background:linear-gradient(to bottom,#fd49dc,#FFC778)
+}
+
+table th{
+  background: rgba(171, 169, 169, 0.5);
+}
+
+table th,table td{
+  padding: 0.5em 0;
+  border: solid 0.1em rgba(249, 249, 249, 0.5);
+  color: white;
+  text-align: center;
+}
+
+.width20{
+  width: 20%;
+}
+
+.width30{
+  width: 30%;
+}
+
+.width60{
+  width: 60%;
+}
+
 /*******************************************************/
 /* footer                                              */
 /*******************************************************/
 footer>p {
-  position: absolute;
+  position: relative;
   /*←絶対位置*/
-  bottom: 10px;
+  /* bottom: 10px; */
   /*下に固定*/
   width: 100%;
   margin: 0px;
@@ -176,10 +215,14 @@ footer>p {
 /********************************************************/
 /* mobileのときのスタイル */
 @media screen and (max-width: 480px) {
-  .btn-container {
+  .btn-container,.score-container {
     margin: 0px 2px 20px;
     font-size: 1em;
     font-weight: bold;
+  }
+
+  table{
+    width: 100%;
   }
 
   footer>p {
@@ -206,3 +249,4 @@ footer>p {
   cursor: pointer;
   /*カーソルをポインターの形（かたち）にする*/
 }
+
